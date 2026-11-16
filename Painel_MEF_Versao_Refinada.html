@@ -359,13 +359,14 @@ function animateCount(target){const el=document.getElementById('count');const st
 function update(){const realNow=new Date(),params=new URLSearchParams(window.location.search);
 const preview2027=params.get('preview')==='2027';
 const previewMes=params.get('preview')==='mes'&&/^(?:[1-9]|1[0-2])$/.test(params.get('mes')||'');
+const previewDiaMes=previewMes&&/^(?:[1-9]|[12][0-9]|3[01])$/.test(params.get('dia')||'');
 const previewConsciencia=!preview2027&&params.get('preview')==='20nov';
 const previewNov=!preview2027&&(params.get('preview')==='novembro'||(params.get('tema')==='novembro'&&realNow.getFullYear()===2026&&realNow.getMonth()!==10));
 const previewDez=!preview2027&&!previewConsciencia&&!previewNov&&(params.get('preview')==='dezembro'||(params.get('tema')==='natal'&&realNow.getFullYear()===2026&&realNow.getMonth()!==11));
-let now=previewMes?new Date(2027,Number(params.get('mes'))-1,15,12):preview2027?new Date(2027,1,15,12):previewConsciencia?new Date(2026,10,20,12):previewNov?new Date(2026,10,16,12):previewDez?new Date(2026,11,1,12):realNow,today=localKey(now);
+let now=previewMes?new Date(2027,Number(params.get('mes'))-1,previewDiaMes?Math.min(Number(params.get('dia')),new Date(2027,Number(params.get('mes')),0).getDate()):15,12):preview2027?new Date(2027,1,15,12):previewConsciencia?new Date(2026,10,20,12):previewNov?new Date(2026,10,16,12):previewDez?new Date(2026,11,1,12):realNow,today=localKey(now);
 if(today===prevDay)return;prevDay=today;const m=now.getMonth(),year=now.getFullYear();
 const natal=(m===11)||(params.get('tema')==='natal'&&realNow.getFullYear()===2026&&!preview2027&&!previewMes&&!previewConsciencia&&!previewNov);
-const november=(m===10||(params.get('tema')==='novembro'&&realNow.getFullYear()===2026))&&!natal&&!preview2027&&!previewMes;
+const november=(m===10||(params.get('tema')==='novembro'&&realNow.getFullYear()===2026&&!previewMes))&&!natal&&!preview2027;
 const consciencia=november&&m===10&&now.getDate()===20;
 const monthlyTheme=year===2027&&m<10&&!natal;
 const monthlyConfig=monthlyTheme?seasonalThemes2027[m+1]:null;
