@@ -281,7 +281,14 @@ html,body{width:100%;height:100%;overflow:hidden}
 .app.monthTheme.theme-6{--themeDeep:#133b34;--themeMid:#2c735a;--themeAccent:#8be2ae;--themeLight:#d6ffe2;--themeGlow:#85dfa488}
 .app.monthTheme.theme-7{--themeDeep:#42264d;--themeMid:#a05647;--themeAccent:#ffcf74;--themeLight:#fff0c2;--themeGlow:#ffd08388}
 .app.monthTheme.theme-8{--themeDeep:#26395b;--themeMid:#4d64a3;--themeAccent:#b2c6ff;--themeLight:#e8ecff;--themeGlow:#a8c0ff88}
-.app.monthTheme.theme-9{--themeDeep:#413a16;--themeMid:#766d2a;--themeAccent:#ffe16c;--themeLight:#fff3b3;--themeGlow:#fbe27b88}
+/* Experiência de setembro: azul-marinho + verde-esmeralda, mantendo o dourado comemorativo. */
+.app.monthTheme.theme-9{
+ --themeDeep:#0d2b40;--themeMid:#1c5b54;--themeAccent:#e3c97d;--themeLight:#f9edc5;--themeGlow:#e3c97d44;
+ background:radial-gradient(ellipse at 79% 7%,#20675d70,transparent 45%),radial-gradient(ellipse at 7% 88%,#16544e66,transparent 51%),linear-gradient(130deg,#061629,#0d2b40 55%,#071a2e);
+}
+.app.monthTheme.theme-9 .panel{box-shadow:0 0 10px #dec67d44,inset 0 0 18px #16476c55}
+.app.monthTheme.theme-9 .logoWrap .logo{box-shadow:0 0 12px #dec67d66,0 0 22px #dec67d33}
+.app.monthTheme.theme-9 .footer{box-shadow:0 0 9px #dec67d44}
 .app.monthTheme.theme-10{--themeDeep:#442346;--themeMid:#853f74;--themeAccent:#ff9ac9;--themeLight:#ffe0f1;--themeGlow:#ffacd088}
 .app.monthTheme .seasonalTag{display:block;color:var(--themeLight);font-size:clamp(10px,.96vw,18px);font-weight:900;letter-spacing:.075em;margin-top:.35vh;text-shadow:0 0 12px var(--themeGlow)}
 .app.monthTheme .slogan{color:var(--themeLight)}
@@ -375,6 +382,69 @@ html,body{width:100%;height:100%;overflow:hidden}
 @media(max-width:900px){.logoMotif{width:55%;right:-11%;top:-7%}.app.theme-3 .logoMotif-3{width:60%;right:-11%;top:-12%}.app.theme-7 .logoMotif-7{width:65%;right:-12%;top:-6%}}
 @media(max-width:900px){.app.theme-9 .logoMotif-9{width:55%;right:-11%;top:-7%}}
 @media(prefers-reduced-motion:reduce){.logoMotif{animation:none!important}}
+
+/* PALETA SUAVE PARA USO CONTÍNUO — 2027
+   Altera apenas fundos e intensidade de luz, sem tocar no layout ou nas animações. */
+.app.monthTheme.theme-1{
+ --themeDeep:#112c47;--themeMid:#3c5070;--themeGlow:#f2c8774b;
+ background:radial-gradient(ellipse at 79% 5%,#4d55705c,transparent 46%),radial-gradient(ellipse at 7% 88%,#253f6250,transparent 52%),linear-gradient(130deg,#071729,#112c47 55%,#091c32);
+}
+.app.monthTheme.theme-2{
+ --themeDeep:#0d2c42;--themeMid:#23576a;--themeGlow:#78e0d249;
+ background:radial-gradient(ellipse at 79% 6%,#236b735b,transparent 46%),radial-gradient(ellipse at 7% 88%,#16516350,transparent 52%),linear-gradient(130deg,#071729,#0d2c42 55%,#071d30);
+}
+.app.monthTheme.theme-3{
+ --themeDeep:#2c2944;--themeMid:#634b68;--themeGlow:#f5a4c74a;
+ background:radial-gradient(ellipse at 79% 6%,#704d6d5b,transparent 46%),radial-gradient(ellipse at 7% 88%,#4a385d4d,transparent 52%),linear-gradient(130deg,#12172d,#2c2944 55%,#141d35);
+}
+.app.monthTheme.theme-4{
+ --themeDeep:#102d43;--themeMid:#31576e;--themeGlow:#e6bd824a;
+ background:radial-gradient(ellipse at 79% 6%,#36647755,transparent 46%),radial-gradient(ellipse at 7% 88%,#24465e50,transparent 52%),linear-gradient(130deg,#071729,#102d43 55%,#081c30);
+}
+.app.monthTheme.theme-5{
+ --themeDeep:#303226;--themeMid:#57573a;--themeGlow:#f3cf5947;
+ background:radial-gradient(ellipse at 79% 6%,#66634754,transparent 46%),radial-gradient(ellipse at 7% 88%,#3b513c4d,transparent 52%),linear-gradient(130deg,#0c202d,#303226 55%,#0a1d2d);
+}
+.app.monthTheme.theme-6{
+ --themeDeep:#0d3437;--themeMid:#286052;--themeGlow:#8be2ae49;
+ background:radial-gradient(ellipse at 79% 6%,#2a6b5b59,transparent 46%),radial-gradient(ellipse at 7% 88%,#20564d50,transparent 52%),linear-gradient(130deg,#071d2c,#0d3437 55%,#071e2d);
+}
+.app.monthTheme.theme-7{
+ --themeDeep:#322c45;--themeMid:#695060;--themeGlow:#ffcf744a;
+ background:radial-gradient(ellipse at 79% 6%,#7a526259,transparent 46%),radial-gradient(ellipse at 7% 88%,#51435b4d,transparent 52%),linear-gradient(130deg,#101b31,#322c45 55%,#111e35);
+}
+.app.monthTheme.theme-8{
+ --themeDeep:#192e49;--themeMid:#455e80;--themeGlow:#b2c6ff4c;
+ background:radial-gradient(ellipse at 79% 6%,#506b9857,transparent 46%),radial-gradient(ellipse at 7% 88%,#354b7350,transparent 52%),linear-gradient(130deg,#08172d,#192e49 55%,#0a1b35);
+}
+/* Setembro mantém exatamente o fundo azul-marinho e verde-esmeralda aprovado na prévia. */
+.app.monthTheme.theme-10{
+ --themeDeep:#312941;--themeMid:#684b66;--themeGlow:#ff9ac94a;
+ background:radial-gradient(ellipse at 79% 6%,#81577358,transparent 46%),radial-gradient(ellipse at 7% 88%,#523b664c,transparent 52%),linear-gradient(130deg,#11172d,#312941 55%,#131b33);
+}
+/* O calendário e os ornamentos continuam luminosos, com brilho mais delicado. */
+.app.monthTheme .panel{box-shadow:0 0 11px var(--themeGlow),inset 0 0 19px #16476c44}
+.app.monthTheme .logoWrap .logo{box-shadow:0 0 13px var(--themeGlow),0 0 24px var(--themeGlow)}
+.app.monthTheme .footer{box-shadow:0 0 10px var(--themeGlow)}
+.app.monthTheme .counterNumber::before{box-shadow:0 0 9px var(--themeGlow),0 0 17px var(--themeGlow)}
+/* Novembro Azul: mantém laços, luzes e Consciência Negra, reduzindo o contraste do fundo. */
+.app.novemberBlue{
+ background:radial-gradient(ellipse at 78% 5%,#24618866,transparent 46%),radial-gradient(ellipse at 8% 87%,#19486c55,transparent 52%),linear-gradient(130deg,#07182d,#12324e 55%,#081b32);
+}
+.app.novemberBlue .panel{box-shadow:0 0 12px #2b9efc4c,inset 0 0 19px #166cb43b}
+.app.novemberBlue .footer{box-shadow:0 0 10px #2b9efc4c}
+/* Dia da Consciência Negra preserva sua identidade própria, com fundo menos intenso. */
+.app.blackConsciousness{
+ background:radial-gradient(ellipse at 78% 6%,#326b4d66,transparent 46%),radial-gradient(ellipse at 8% 88%,#8b4e2c35,transparent 52%),linear-gradient(130deg,#10272c,#1b3a37 55%,#102b31);
+}
+.app.blackConsciousness .panel{box-shadow:0 0 11px #c79c5647,inset 0 0 18px #34684b3d}
+/* Dezembro: verde-pinho e azul profundo; enfeites e touca natalina intactos. */
+.app.christmas{
+ background:radial-gradient(ellipse at 79% 6%,#24694d65,transparent 46%),radial-gradient(ellipse at 8% 88%,#1b564c4e,transparent 52%),linear-gradient(130deg,#071d28,#123b36 55%,#081e2c);
+}
+.app.christmas .panel{box-shadow:0 0 11px #d4b45b44,inset 0 0 20px #14533a44}
+.app.christmas .footer{box-shadow:0 0 10px #d4b45b40}
+
 </style></head><body><div class="app"><div class="seasonalLayer" aria-hidden="true"><div class="seasonalGlowDots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="seasonalSymbols"><span style="--x:1%;--y:21%;--size:16px;--dur:3s;--delay:-0s">✦</span><span style="--x:98%;--y:20%;--size:23px;--dur:4s;--delay:-3s">✦</span><span style="--x:1.5%;--y:38%;--size:18px;--dur:5s;--delay:-6s">✦</span><span style="--x:97%;--y:39%;--size:25px;--dur:6s;--delay:-2s">✦</span><span style="--x:2%;--y:58%;--size:20px;--dur:3s;--delay:-5s">✦</span><span style="--x:98%;--y:59%;--size:27px;--dur:4s;--delay:-1s">✦</span><span style="--x:3%;--y:78%;--size:22px;--dur:5s;--delay:-4s">✦</span><span style="--x:96%;--y:78%;--size:17px;--dur:6s;--delay:-0s">✦</span><span style="--x:10%;--y:96%;--size:24px;--dur:3s;--delay:-3s">✦</span><span style="--x:88%;--y:96%;--size:19px;--dur:4s;--delay:-6s">✦</span><span style="--x:0.5%;--y:12%;--size:26px;--dur:5s;--delay:-2s">✦</span><span style="--x:99%;--y:12%;--size:21px;--dur:6s;--delay:-5s">✦</span><span style="--x:12%;--y:4%;--size:16px;--dur:3s;--delay:-1s">✦</span><span style="--x:86%;--y:4%;--size:23px;--dur:4s;--delay:-4s">✦</span><span style="--x:1%;--y:89%;--size:18px;--dur:5s;--delay:-0s">✦</span><span style="--x:98%;--y:89%;--size:25px;--dur:6s;--delay:-3s">✦</span></div><div class="seasonalBunting"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="seasonalRibbons"><svg viewBox="0 0 90 126" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M45 18 C14 14 15 44 37 66 L66 114" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><path d="M45 18 C77 14 77 44 54 66 L25 114" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" opacity=".68"/><path d="M32 30 C27 43 33 50 43 60" fill="none" stroke="#ffffff" stroke-width="3" opacity=".65"/></svg><svg viewBox="0 0 90 126" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M45 18 C14 14 15 44 37 66 L66 114" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><path d="M45 18 C77 14 77 44 54 66 L25 114" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" opacity=".68"/><path d="M32 30 C27 43 33 50 43 60" fill="none" stroke="#ffffff" stroke-width="3" opacity=".65"/></svg></div></div><div class="marchBunny" aria-hidden="true"><span class="bunnyShadow"></span><svg class="bunnyFigure" viewBox="0 0 120 145" xmlns="http://www.w3.org/2000/svg">
 <defs><linearGradient id="marchBunnyFur" x1="0" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#eee2f2"/></linearGradient></defs>
 <g class="bunnyEarLeft"><ellipse cx="54" cy="41" rx="12" ry="38" transform="rotate(-11 54 41)" fill="url(#marchBunnyFur)" stroke="#dfd0e4" stroke-width="2"/><ellipse cx="54" cy="42" rx="6" ry="29" transform="rotate(-11 54 42)" fill="#f5b0cb"/></g>
