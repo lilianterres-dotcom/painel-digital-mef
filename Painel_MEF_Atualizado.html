@@ -21,10 +21,10 @@
 const Y=2026;const schoolDays=[];function add(m,days){days.forEach(d=>schoolDays.push(`${Y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`))}
 // Outubro: 20 dias no calendário original; 30/10 foi posteriormente definido como recesso.
 add(10,[1,2,5,6,7,8,9,14,15,16,19,20,21,22,23,26,27,28,29]);
-add(11,[3,4,5,6,9,10,11,12,13,16,17,18,23,24,25,26,27,30]);
+add(11,[3,4,5,6,9,10,11,12,13,16,17,18,19,24,25,26,27,30]);
 add(12,[1,2,3,4,7,8,9,10,11,14,15,16,17,18]);
-const off={'2026-10-12':'Feriado: Nossa Senhora Aparecida','2026-10-13':'Recesso: Dia do Professor','2026-10-30':'Recesso escolar','2026-11-02':'Finados','2026-11-15':'Proclamação da República','2026-11-19':'Parada pedagógica','2026-11-20':'Consciência Negra'};
-const special={'2026-12-21':'Conselho de Classe Final','2026-12-22':'Conselho de Classe Final','2026-12-23':'Encerramento'};
+const off={'2026-10-12':'Feriado: Nossa Senhora Aparecida','2026-10-13':'Recesso: Dia do Professor','2026-10-30':'Recesso escolar','2026-11-02':'Finados','2026-11-15':'Proclamação da República','2026-11-20':'Feriado nacional: Consciência Negra','2026-11-23':'Parada pedagógica','2026-12-25':'Natal'};
+const special={'2026-12-15':'Conselho de Classe – Ensino Médio','2026-12-16':'Conselho de Classe – Ensino Fundamental – Anos Finais','2026-12-17':'Conselho de Classe – Ensino Fundamental – Anos Iniciais','2026-12-18':'Encerramento do ano letivo'};
 const months=['JANEIRO','FEVEREIRO','MARÇO','ABRIL','MAIO','JUNHO','JULHO','AGOSTO','SETEMBRO','OUTUBRO','NOVEMBRO','DEZEMBRO'];const weekdays=['DOMINGO','SEGUNDA-FEIRA','TERÇA-FEIRA','QUARTA-FEIRA','QUINTA-FEIRA','SEXTA-FEIRA','SÁBADO'];const pad=n=>String(n).padStart(2,'0');let prevDay='',prevCount=-1;
 function localKey(d){return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`}
 function animateCount(target){const el=document.getElementById('count');const start=performance.now(),duration=1900;function tick(now){let t=Math.min(1,(now-start)/duration);let ease=1-Math.pow(1-t,3);el.textContent=pad(Math.round(target*ease));if(t<1)requestAnimationFrame(tick)}requestAnimationFrame(tick)}
