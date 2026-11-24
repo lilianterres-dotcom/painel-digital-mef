@@ -476,7 +476,7 @@ add(10,[1,2,5,6,7,8,9,14,15,16,19,20,21,22,23,26,27,28,29]);
 add(11,[3,4,5,6,9,10,11,12,13,16,17,18,19,24,25,26,27,30]);
 add(12,[1,2,3,4,7,8,9,10,11,14,15,16,17,18]);
 const off={'2026-10-12':'Feriado: Nossa Senhora Aparecida','2026-10-13':'Recesso: Dia do Professor','2026-10-30':'Recesso escolar','2026-11-02':'Finados','2026-11-15':'Proclamação da República','2026-11-20':'Feriado nacional: Consciência Negra','2026-11-23':'Parada pedagógica','2026-12-25':'Natal'};
-const special={'2026-12-21':'Conselho de Classe Final','2026-12-22':'Conselho de Classe Final','2026-12-23':'Encerramento'};
+const special={'2026-12-18':'Término do ano letivo com estudantes','2026-12-21':'Conselho de Classe Final','2026-12-22':'Conselho de Classe Final','2026-12-23':'Encerramento'};
 // Calendário 2027: dados da planilha da escola. Resumo mensal = 200 dias.
 // Confirmado pela escola: 19/05 (Parada Pedagógica) e 09/09 (Conselho)
 // são dias letivos e integram o total oficial de 200 dias.
@@ -516,7 +516,7 @@ function renderMonthlyFooter(){
  const item=footerItems[footerCursor%footerItems.length];
  ad.textContent=item.date.slice(8,10)+'/'+item.date.slice(5,7);
  al.textContent=item.label.toUpperCase();
- at.textContent=item.kind==='off'?(item.date.endsWith('-12-25')?'FELIZ NATAL!':'NÃO HAVERÁ AULA'):item.kind==='school'?'ATIVIDADE ESCOLAR':'DATA COMEMORATIVA';
+ at.textContent=item.date==='2026-12-18'?'ÚLTIMO DIA DE AULA':item.kind==='off'?(item.date.endsWith('-12-25')?'FELIZ NATAL!':'NÃO HAVERÁ AULA'):item.kind==='school'?'ATIVIDADE ESCOLAR':'DATA COMEMORATIVA';
 }
 function rotateMonthlyFooter(){if(footerItems.length>1){footerCursor=(footerCursor+1)%footerItems.length;renderMonthlyFooter()}}
 
