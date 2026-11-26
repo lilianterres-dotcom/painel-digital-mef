@@ -707,9 +707,6 @@ const MEF_BIRTHDAY_API_URL = '';
   root.setAttribute('aria-hidden','false');
  }
  function loadReal(){
-  if(!MEF_BIRTHDAY_API_URL||!/\/$/.test(MEF_BIRTHDAY_API_URL.split('?')[0].replace(/exec$/, ''))){
-   // A checagem definitiva da URL ocorre abaixo, ao criar o objeto URL.
-  }
   if(!MEF_BIRTHDAY_API_URL){setPeople([]);return;}
   let url;
   try{
@@ -720,7 +717,7 @@ const MEF_BIRTHDAY_API_URL = '';
   const script=document.createElement('script');
   let ended=false;
   const finish=()=>{if(ended)return false;ended=true;clearTimeout(timeout);delete window[callback];script.remove();return true;};
-  const timeout=setTimeout(()=>{if(finish())console.warn('Consulta de aniversariantes indisponível; mantendo a data.');},20000);
+  const timeout=setTimeout(()=>{if(finish()){setPeople([]);console.warn('Consulta de aniversariantes indisponível; mostrando a data.');}},20000);
   window[callback]=function(data){
    if(!finish())return;
    if(!data||data.ok!==true||data.date!==todaySP()||!Array.isArray(data.people)){
@@ -746,6 +743,6 @@ const MEF_BIRTHDAY_API_URL = '';
  if(mode==='real')loadReal();
  setInterval(tick,400);
  setInterval(()=>{if(mode==='real'&&MEF_BIRTHDAY_API_URL)loadReal();},15*60*1000);
- setInterval(()=>{if(mode==='real'&&lastCheckedDate!==todaySP())loadReal();},60*1000);
+ setInterval(()=>{if(mode==='real'&&lastCheckedDate!==todaySP()){setPeople([]);loadReal();}},60*1000);
 })();
 </script></body></html>
